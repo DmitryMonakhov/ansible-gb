@@ -1,0 +1,12 @@
+---
+- name: Create user
+  hosts: debian-02
+  become: true
+  roles:
+    - { role: common }
+
+- name: Install package 'nginx'
+  hosts: debian-02
+  become: true
+  roles:
+    - { role: http-server }

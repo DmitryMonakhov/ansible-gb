@@ -1,0 +1,14 @@
+---
+# tasks file for http-server
+#
+- name: Update the repository cache and update package "nginx" to latest version
+  apt:
+    name: nginx
+    state: latest
+    update_cache: yes
+
+- name: Start nginx, if not running. Enable autostart
+  service:
+    name: nginx
+    state: started
+    enabled: yes 
